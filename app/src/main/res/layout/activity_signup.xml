@@ -12,16 +12,33 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:scaleType="center"
-        android:src="@mipmap/backsmall"
-        />
+        android:src="@mipmap/backsmall" />
 
-    <ImageView
-        android:layout_width="wrap_content"
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
         android:layout_marginBottom="220dp"
-        android:src="@mipmap/headingbtn" />
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:hint="Enter your name">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+   <TextView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="Sign-Up here"
+       android:textStyle="bold"
+       android:layout_marginLeft="30dp"
+       android:layout_alignParentBottom="true"
+       android:layout_marginBottom="360dp"
+       android:textSize="20dp"
+       />
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
@@ -62,8 +79,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="30dp"
         android:background="@null"
-        android:id="@+id/loginbtn"
-        android:src="@mipmap/loginbtn" />
+        android:id="@+id/signupbtn"
+        android:src="@mipmap/signuppbtn" />
 
 
 
