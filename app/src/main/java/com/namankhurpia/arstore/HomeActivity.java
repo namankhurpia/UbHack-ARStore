@@ -20,13 +20,12 @@ import java.util.Locale;
 
 public class HomeActivity extends AppCompatActivity {
 
-
     private final int REQ_CODE_SPEECH_INPUT = 100;
     ImageButton speechtotextbtn;
     TextView text_output_after_speech;
 
     ImageButton profile;
-    ImageButton horse, magneticfieldlines, photosynthesis;
+    ImageButton solar, magneticfieldlines, photosynthesis;
     TextView myapps, trendingapps;
 
 
@@ -38,7 +37,7 @@ public class HomeActivity extends AppCompatActivity {
         text_output_after_speech = (TextView)findViewById(R.id.textoutput);
         profile = (ImageButton)findViewById(R.id.profile);
 
-        horse = (ImageButton)findViewById(R.id.horse);
+        solar = (ImageButton)findViewById(R.id.solar);
         magneticfieldlines = (ImageButton)findViewById(R.id.magf);
         photosynthesis = (ImageButton)findViewById(R.id.photosy);
 
@@ -60,10 +59,10 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-        horse.setOnClickListener(new View.OnClickListener() {
+        solar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent launchIntent = getPackageManager().getLaunchIntentForPackage("com.namankhurpia.horse");
+                Intent launchIntent = getPackageManager().getLaunchIntentForPackage("com.DefaultCompany.Myproject");
                 if (launchIntent != null) {
                     startActivity(launchIntent);
                 }
@@ -152,7 +151,15 @@ public class HomeActivity extends AppCompatActivity {
 
                     }
 
-                    else if (s2.equalsIgnoreCase("horse")) {
+                    else if (s2.equalsIgnoreCase("solar") || s2.equalsIgnoreCase("solar system") || s2.equalsIgnoreCase("moon") || s2.equalsIgnoreCase("earth") || s2.equalsIgnoreCase("sun") )  {
+                        Intent launchIntent = getPackageManager().getLaunchIntentForPackage("com.DefaultCompany.Myproject");
+                        if (launchIntent != null) {
+                            startActivity(launchIntent);
+                        }
+
+                    }
+                    else if(s2.equalsIgnoreCase("horse"))
+                    {
                         Intent launchIntent = getPackageManager().getLaunchIntentForPackage("com.namankhurpia.horse");
                         if (launchIntent != null) {
                             startActivity(launchIntent);

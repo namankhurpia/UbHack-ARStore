@@ -10,6 +10,7 @@
         <package android:name="com.namankhurpia.plants" />
         <package android:name="com.namankhurpia.horse" />
         <package android:name="com.namankhurpia.magneticflief" />
+        <package android:name="com.DefaultCompany.Myproject"/>
     </queries>
 
     <application
