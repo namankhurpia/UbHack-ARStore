@@ -27,6 +27,7 @@ public class HomeActivity extends AppCompatActivity {
 
     ImageButton profile;
     ImageButton horse, magneticfieldlines, photosynthesis;
+    TextView myapps, trendingapps;
 
 
     @Override
@@ -40,6 +41,9 @@ public class HomeActivity extends AppCompatActivity {
         horse = (ImageButton)findViewById(R.id.horse);
         magneticfieldlines = (ImageButton)findViewById(R.id.magf);
         photosynthesis = (ImageButton)findViewById(R.id.photosy);
+
+        trendingapps = (TextView)findViewById(R.id.tredingapps);
+        myapps = (TextView)findViewById(R.id.myapps);
 
         text_output_after_speech.setText("Go head, say something \nlike Plants, Magnetic field lines, horse");
         speechtotextbtn.setOnClickListener(new View.OnClickListener() {
@@ -92,6 +96,13 @@ public class HomeActivity extends AppCompatActivity {
                 {
                     Log.d("Tag","intent is null");
                 }
+            }
+        });
+
+        trendingapps.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(HomeActivity.this, StoreActivity.class));
             }
         });
 

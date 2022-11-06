@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1042444357043",
+    "project_id": "vrstore-ubhack",
+    "storage_bucket": "vrstore-ubhack.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1042444357043:android:0d0c9a94c49f836c180fc6",
+        "android_client_info": {
+          "package_name": "com.namankhurpia.arstore"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1042444357043-3sf4rhai2dj6u45oif87skubiuq9vqrm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJBfqb_P0bMyyb12_SO94p_0v5CPGsfPU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1042444357043-3sf4rhai2dj6u45oif87skubiuq9vqrm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
