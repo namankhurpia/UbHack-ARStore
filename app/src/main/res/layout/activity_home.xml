@@ -42,6 +42,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="230dp"
         android:background="@null"
+        android:id="@+id/magf"
         android:src="@mipmap/magbtn" />
 
     <ImageButton
@@ -50,6 +51,7 @@
         android:layout_marginLeft="135dp"
         android:layout_marginTop="230dp"
         android:background="@null"
+        android:id="@+id/photosy"
         android:src="@mipmap/plantbtn" />
 
     <ImageButton
@@ -58,6 +60,7 @@
         android:layout_marginLeft="250dp"
         android:layout_marginTop="230dp"
         android:background="@null"
+        android:id="@+id/horse"
         android:src="@mipmap/horsebtn" />
 
     <ImageView
@@ -80,13 +83,13 @@
         android:id="@+id/speechtotextbtn"
         android:src="@mipmap/audiocall" />
 
-    <ImageView
+    <ImageButton
+        android:id="@+id/profile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@mipmap/navbar"
         android:layout_alignParentBottom="true"
-
-        />
+        android:background="@null"
+        android:src="@mipmap/navbar" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -96,7 +99,7 @@
         android:textColor="@color/white"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="100dp"
-        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="30dp"
         />
 
 

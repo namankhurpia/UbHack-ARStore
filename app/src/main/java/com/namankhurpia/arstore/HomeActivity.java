@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
 import android.util.Log;
@@ -24,6 +25,9 @@ public class HomeActivity extends AppCompatActivity {
     ImageButton speechtotextbtn;
     TextView text_output_after_speech;
 
+    ImageButton profile;
+    ImageButton horse, magneticfieldlines, photosynthesis;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,11 +35,63 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         speechtotextbtn = (ImageButton) findViewById(R.id.speechtotextbtn);
         text_output_after_speech = (TextView)findViewById(R.id.textoutput);
-        text_output_after_speech.setText("Go head, say something");
+        profile = (ImageButton)findViewById(R.id.profile);
+
+        horse = (ImageButton)findViewById(R.id.horse);
+        magneticfieldlines = (ImageButton)findViewById(R.id.magf);
+        photosynthesis = (ImageButton)findViewById(R.id.photosy);
+
+        text_output_after_speech.setText("Go head, say something \nlike Plants, Magnetic field lines, horse");
         speechtotextbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 promptSpeechInput();
+            }
+        });
+
+        profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(HomeActivity.this, ProfileActivity.class));
+            }
+        });
+
+        horse.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent launchIntent = getPackageManager().getLaunchIntentForPackage("com.namankhurpia.horse");
+                if (launchIntent != null) {
+                    startActivity(launchIntent);
+                }
+            }
+        });
+
+        photosynthesis.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent launchIntent = getPackageManager().getLaunchIntentForPackage("com.namankhurpia.plants");
+                if (launchIntent != null) {
+                    startActivity(launchIntent);
+                }
+                else
+                {
+                    Log.d("Tag","intent is null in plants");
+                }
+            }
+        });
+
+        magneticfieldlines.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent launchIntent = getPackageManager().getLaunchIntentForPackage("com.namankhurpia.magneticflief");
+                if (launchIntent != null) {
+
+                    startActivity(launchIntent);
+                }
+                else
+                {
+                    Log.d("Tag","intent is null");
+                }
             }
         });
 
@@ -71,16 +127,21 @@ public class HomeActivity extends AppCompatActivity {
                     String s2 = result.get(0);
                     Log.d("TAG","i got:"+s2+".");
 
-                    if (s2.equalsIgnoreCase("horse"))
+                    if (s2.equalsIgnoreCase("magnetic field lines") || s2.equalsIgnoreCase("magnetic lines") || s2.equalsIgnoreCase("magnetic field") ||s2.equalsIgnoreCase("magnetic") || s2.equalsIgnoreCase("magnet"))
                     {
                         Intent launchIntent = getPackageManager().getLaunchIntentForPackage("com.namankhurpia.magneticflief");
                         if (launchIntent != null) {
+
                             startActivity(launchIntent);
+                        }
+                        else
+                        {
+                            Log.d("Tag","intent is null");
                         }
 
                     }
 
-                    if (s2.equalsIgnoreCase("magnetic field lines")) {
+                    else if (s2.equalsIgnoreCase("horse")) {
                         Intent launchIntent = getPackageManager().getLaunchIntentForPackage("com.namankhurpia.horse");
                         if (launchIntent != null) {
                             startActivity(launchIntent);
@@ -88,18 +149,21 @@ public class HomeActivity extends AppCompatActivity {
 
                     }
 
-                    if (s2.equalsIgnoreCase("plants") || s2.equalsIgnoreCase("Plants"))
+                    else if (s2.equalsIgnoreCase("photosynthesis") || s2.equalsIgnoreCase("plants"))
                     {
                         Log.d("TAG","plants run");
                         Intent launchIntent = getPackageManager().getLaunchIntentForPackage("com.namankhurpia.plants");
                         if (launchIntent != null) {
                             startActivity(launchIntent);
                         }
+                        else
+                        {
+                            Log.d("Tag","intent is null in plants");
+                        }
                     }
                     else
                     {
                         text_output_after_speech.setText("I m sorry i don't understand");
-
                     }
                 }
 
